@@ -47,6 +47,16 @@ export function SiteFooter() {
               </li>
             ))}
             <li>
+              <Link href="/articles" className="hover:text-white">
+                Articles
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-white">
+                Contact
+              </Link>
+            </li>
+            <li>
               <Link href="/start" className="hover:text-white">
                 Start here
               </Link>
@@ -77,9 +87,15 @@ export function SiteFooter() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-400">Connect</p>
           <ul className="mt-4 space-y-2 text-sm">
+            {site.contactEmail && <li className="select-all">{site.contactEmail}</li>}
             <li>
-              <a href={`mailto:${site.contactEmail}`} className="hover:text-white">
-                {site.contactEmail}
+              <Link href="/contact" className="hover:text-white">
+                Send us a message
+              </Link>
+            </li>
+            <li>
+              <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                @{site.instagram.handle}
               </a>
             </li>
             <li>
@@ -98,7 +114,7 @@ export function SiteFooter() {
       <div className="border-t border-ocean-800">
         <Container className="flex flex-col gap-2 py-6 text-xs text-sand-300 sm:flex-row sm:items-center sm:justify-between">
           <p>© <Year /> {site.name}. A Hawaiʻi nonprofit corporation.</p>
-          <p>Soli Deo Gloria.</p>
+          <Link href="/about#beliefs" className="hover:text-white">Creeds and confessions</Link>
         </Container>
       </div>
     </footer>

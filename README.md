@@ -7,23 +7,44 @@ A refreshed site for [Oahu Theological Seminary](https://oahuseminary.org) built
 | Area | Route | Notes |
 | --- | --- | --- |
 | Home | `/` | Hero with featured YouTube video, "two doors" (community courses vs. degrees), Start Here pathway, mission, Instagram, events |
-| About | `/about` | Letter from the president, location, TLI partnership |
+| About | `/about` | President’s message, history, creeds and confessions, TLI partnership |
 | Degrees | `/degrees`, `/degrees/[slug]` | M.A. in Ecclesial Theology, M.Div., Th.M. |
+| Faculty | `/faculty` | Bios from Meet Our Team |
+| Calendar | `/calendar` | Course schedule by term, from the academic calendar |
+| Articles | `/articles` | Articles, blog posts, and prayer letters |
 | Admissions | `/admissions` | Steps, tuition, requirements |
 | Community courses | `/courses`, `/courses/[slug]` | Public catalog and outlines of free, non-degree courses |
-| Community | `/community` | Pillars, events, video, Instagram, giving |
+| Community | `/community` | Seminars and events, video, articles, Instagram, giving |
+| Contact | `/contact` | Address and a contact form (`POST /api/contact`) |
 | Start Here | `/start` | Three intro videos with reflection prompts and progress, then apply |
 | Apply | `/start/apply` | One application form for all tracks (`?program=<slug>` preselects) |
 | Student portal | `/dashboard` | My courses, catalog, Moodle-style course viewer, optional Moodle embed, sign-in |
 | API | `POST /api/apply` | Stores applications in Supabase and/or forwards to a webhook |
 
+## Where the content came from
+
+Text in `src/content/` was taken from the current oahuseminary.org pages: the home page, program pages, Meet Our Team, Letter from the President, Creeds and Confessions, Admissions, and the 2025–2026 Academic Calendar. Old URLs such as `/ma-in-ecclesial-theology` and `/meet-our-team` redirect to their new pages (see `next.config.ts`).
+
+### Still to confirm before launch
+
+Search for `TODO` in `src/content/` to find each one.
+
+- [ ] Featured YouTube video ID, plus the three Start Here video IDs
+- [ ] Public contact email (the contact form works without it)
+- [ ] Taylor Brazil’s and Mark Brians’s exact titles; Cody Irwin’s bio
+- [ ] Total credit hours for the M.A. and M.Div.
+- [ ] Full text of the Letter from the President and the Statement on Marriage, Gender, and Sexuality
+- [ ] Logo, photos, and brand colors from the current site
+- [ ] Replace the four sample community courses with real ones
+
 ## Editing content (no code required)
 
 All copy, links, and course content live in `src/content/`:
 
-- `site.ts` — name, tagline, address, Instagram handle, **YouTube video ID**, tuition, partner, giving link
+- `site.ts` — name, tagline, history, address, class times, Instagram, **YouTube video ID**, tuition, giving link
+- `faculty.ts`, `calendar.ts`, `beliefs.ts`, `articles.ts` — faculty bios, course schedule, creeds and confessions, articles
 - `degrees.ts` — the three degree programs
-- `courses.ts` — community courses in a Moodle-shaped structure (course → sections → activities)
+- `courses.ts` — community courses in a Moodle-shaped structure (course → sections → activities). The current four are samples.
 - `pathway.ts` — the three Start Here videos
 - `community.ts` — events, pillars, quotes
 

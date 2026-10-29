@@ -1,58 +1,58 @@
 export type Event = {
   id: string;
   title: string;
-  date: string; // ISO date
-  time?: string;
+  date: string; // ISO date of the first day
+  when: string; // human-readable date and time
   location: string;
   description: string;
   url?: string;
-  kind: "seminar" | "gathering" | "class" | "prayer";
 };
 
+/**
+ * Newest first. Add upcoming events at the top. Past events stay as a
+ * record of what OTS offers the wider church.
+ */
 export const events: Event[] = [
   {
     id: "seminar-worship-2026",
     title: "Seminar on Worship",
     date: "2026-06-20",
-    time: "9:00 AM – 12:30 PM",
+    when: "Saturday, June 20, 2026 · 9:00 am – 12:30 pm",
     location: "Aiea Heights Church",
-    description:
-      "A Saturday-morning seminar for pastors, worship leaders, and church members on what Scripture says about gathered worship. Open to all.",
+    description: "A free Saturday-morning seminar on gathered worship, open to the public.",
     url: "https://www.eventbrite.com/e/oahu-theological-seminary-seminar-on-worship-tickets-1990996548272",
-    kind: "seminar",
   },
   {
-    id: "spring-2027-term",
-    title: "Spring 2027 Term begins",
-    date: "2027-01-12",
-    time: "Tuesday evenings",
+    id: "greek-refresher-2026",
+    title: "Biblical Greek Refresher with Dr. Robert Plummer",
+    date: "2026-01-07",
+    when: "Wednesday – Saturday, January 7–10, 2026",
     location: "Aiea Heights Church",
     description:
-      "Ecclesial Theology and Greek Exegesis of Matthew are on the schedule. Visitors are welcome to sit in on a first night.",
-    kind: "class",
+      "Dr. Robert Plummer of Daily Dose of Greek led a four-day refresher working through portions of John’s Gospel. $35 per person.",
+  },
+  {
+    id: "preview-night-2025",
+    title: "Preview Night",
+    date: "2025-05-12",
+    when: "Monday, May 12, 2025 · 6:00 pm",
+    location: "Aiea Heights Church",
+    description: "An evening to sit in on classes and meet faculty and students.",
+    url: "https://www.eventbrite.com/e/oahu-theological-seminary-preview-night-tickets-1304861559049",
   },
 ];
 
 export const communityPillars = [
   {
-    title: "Learn together",
-    text: "Nobody studies alone at OTS. Classes are small, shared meals are common, and most assignments are designed to be done with people from your church.",
+    title: "Linked to local churches",
+    text: "OTS is very intentionally linked to the local churches on Oʻahu. Most courses include projects that can only be completed in the context of the local church.",
   },
   {
-    title: "Rooted in local churches",
-    text: "We don't replace the church; we serve it. Every student is sent and supported by a congregation, and pastors stay involved throughout.",
+    title: "Open to the wider church",
+    text: "Seminars, refresher courses, and preview nights are open to pastors, church members, and anyone who wants to grow in the Scriptures.",
   },
   {
-    title: "Praying for the Pacific",
-    text: "Our vision is bigger than Oahu. We pray and work for a strengthened church across Hawaiʻi and the Pacific Islands.",
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "Most of our courses are built around projects that can only be completed in the context of the local church. That's on purpose.",
-    name: "Chris Bruno",
-    role: "President, Oahu Theological Seminary",
+    title: "For the Pacific",
+    text: "The aim is bigger than Oʻahu: a strengthened church in Hawaiʻi and across the Pacific Rim.",
   },
 ];

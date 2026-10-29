@@ -25,7 +25,7 @@ const variants = {
 const sizes = { sm: "px-3 py-1.5 text-sm", md: "px-4 py-2.5 text-sm", lg: "px-6 py-3 text-base" };
 
 export function Button({ href, variant = "primary", size = "md", className = "", children, external, ...rest }: ButtonProps) {
-  const cls = `inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors ${variants[variant]} ${sizes[size]} ${className}`;
+  const cls = `inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-colors ${variants[variant]} ${sizes[size]} ${className}`;
   if (href) {
     if (external) {
       return (
@@ -84,7 +84,7 @@ export function Pill({ children, tone = "sand" }: { children: ReactNode; tone?: 
   const t = {
     sand: "bg-sand-100 text-ink-muted",
     lagoon: "bg-lagoon-100 text-lagoon-700",
-    gold: "bg-gold-400/30 text-koa-700",
+    gold: "bg-gold-400 text-ocean-950",
     ocean: "bg-ocean-900 text-white",
   }[tone];
   return <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${t}`}>{children}</span>;

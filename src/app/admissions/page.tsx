@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Button, Card, Container, PageHero, SectionHeading, icons } from "@/components/ui";
+import { Button, Card, Container, PageHero, icons } from "@/components/ui";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = { title: "Admissions" };
 
 const steps = [
-  ["Talk with your church", "Meet with your pastor or elders. We ask every applicant to discern this with their local church leadership first."],
-  ["Watch the three intro videos", "About thirty minutes total. They'll show you the vision, the model, and a real lesson."],
-  ["Submit the application", "Tell us about yourself, your church, and the program you're interested in. We'll follow up within a few days."],
-  ["Visit a class", "Sit in on a Tuesday evening at Aiea Heights Church and meet students and faculty."],
-  ["Enroll", "Once accepted, you'll receive course registration details and access to the student portal and Moodle."],
+  [
+    "Meet with your church leadership",
+    "Before applying, we encourage you to meet with your local church leadership to help discern whether the program is a good fit for you.",
+  ],
+  ["Watch the three intro videos", "About thirty minutes in total: the vision, how classes work, and a sample lesson."],
+  ["Submit the application", "Tell us about yourself, your church, and the program you are considering."],
+  ["Connect with us", "We would love to connect and give you a closer look at our programs, including a visit to a Tuesday class."],
 ];
 
 export default function AdmissionsPage() {
   return (
     <>
-      <PageHero eyebrow="Admissions" title="How to apply" text="Admission to OTS begins with a conversation in your church and ends with you in a classroom. Here's the path.">
+      <PageHero eyebrow="Admissions" title="How to apply" text="Admission to OTS begins with a conversation in your church.">
         <Button href="/start/apply" variant="gold">
           Start an application {icons.arrow}
         </Button>
@@ -45,51 +47,27 @@ export default function AdmissionsPage() {
                 <span className="text-lg text-ink-muted"> / credit hour</span>
               </p>
               <p className="mt-2 text-sm text-ink-muted">
-                For the {site.tuition.year} school year, tuition and fees are set at ${site.tuition.perCredit} per credit
-                hour for all programs.
+                For the {site.tuition.year} school year, tuition and fees are set at the rate of ${site.tuition.perCredit}{" "}
+                per credit hour for all programs.
               </p>
-              <Button href={site.academicCalendarUrl} external variant="secondary" size="sm" className="mt-4">
-                Academic calendar (PDF)
+            </Card>
+            <Card>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lagoon-600">Doctrinal commitment</p>
+              <p className="mt-3 text-sm">
+                Enrolled students affirm the traditional creeds of Christianity and at least one reformational confession.
+              </p>
+              <Button href="/about#beliefs" variant="secondary" size="sm" className="mt-4">
+                Creeds and confessions
               </Button>
             </Card>
             <Card>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lagoon-600">Community courses</p>
-              <p className="mt-3 text-sm">
-                Not ready for a degree? Our non-degree courses have no application and no cost. Create a portal account and start today.
-              </p>
-              <Button href="/courses" variant="secondary" size="sm" className="mt-4">
-                Browse courses
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lagoon-600">Class schedule</p>
+              <p className="mt-3 text-sm">{site.location.note}</p>
+              <Button href="/calendar" variant="secondary" size="sm" className="mt-4">
+                Academic calendar
               </Button>
-            </Card>
-            <Card>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lagoon-600">Questions?</p>
-              <p className="mt-3 text-sm">
-                Email{" "}
-                <a className="underline" href={`mailto:${site.contactEmail}`}>
-                  {site.contactEmail}
-                </a>{" "}
-                or come by on a Tuesday evening.
-              </p>
             </Card>
           </aside>
-        </Container>
-      </section>
-
-      <section className="bg-sand-100 py-16">
-        <Container>
-          <SectionHeading align="center" eyebrow="Requirements" title="What we look for" />
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {[
-              ["A sending church", "Active membership and the support of your pastor or elders."],
-              ["Readiness to study", "A bachelor's degree for master's programs; an M.Div. or equivalent for the Th.M."],
-              ["A heart for the church", "A desire to serve the church in Hawaiʻi and the Pacific, wherever God leads."],
-            ].map(([t, d]) => (
-              <Card key={t}>
-                <h3 className="text-lg text-ocean-900">{t}</h3>
-                <p className="mt-2 text-sm text-ink-muted">{d}</p>
-              </Card>
-            ))}
-          </div>
         </Container>
       </section>
     </>

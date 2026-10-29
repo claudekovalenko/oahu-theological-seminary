@@ -1,4 +1,7 @@
 /**
+ * TODO: these four courses are SAMPLE content to show how the portal works.
+ * Replace them with real OTS courses (or export from Moodle) before launch.
+ *
  * Non-degree ("Equip") courses for the wider church community.
  *
  * The structure intentionally mirrors Moodle so that content can be moved
@@ -52,6 +55,8 @@ export type Course = {
   weeks: number;
   /** Optional link to the same course in Moodle */
   moodleUrl?: string;
+  /** True for placeholder content that still needs to be replaced */
+  sample?: boolean;
   tags: string[];
   sections: Section[];
 };
@@ -68,6 +73,7 @@ export const courses: Course[] = [
     description:
       "This course is for anyone in the church who wants to grow in reading Scripture. We cover genre, context, the storyline of the Bible, and how to move from the text to life. No prior training required.",
     instructor: "OTS Faculty",
+    sample: true,
     weeks: 6,
     tags: ["Bible", "Foundations"],
     sections: [
@@ -220,6 +226,7 @@ export const courses: Course[] = [
     description:
       "What do Christians believe about God, Christ, the Spirit, salvation, and the church, and why does it matter for ordinary life? This course works through the Apostles' Creed line by line.",
     instructor: "OTS Faculty",
+    sample: true,
     weeks: 8,
     tags: ["Theology", "Foundations"],
     sections: [
@@ -288,6 +295,7 @@ export const courses: Course[] = [
     description:
       "A church-history course with a local focus. We trace the arrival and growth of Christianity in Hawaiʻi and the wider Pacific, the faithfulness and failures of earlier generations, and what that history means for ministry in the islands now.",
     instructor: "OTS Faculty",
+    sample: true,
     weeks: 6,
     tags: ["Church History", "Hawaiʻi"],
     sections: [
@@ -319,6 +327,7 @@ export const courses: Course[] = [
     description:
       "Facilitation skills, preparing a study, asking good questions, handling hard conversations, and caring for people. Built for volunteers.",
     instructor: "OTS Faculty",
+    sample: true,
     weeks: 4,
     tags: ["Ministry Skills", "Community"],
     sections: [

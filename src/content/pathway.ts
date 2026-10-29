@@ -22,7 +22,7 @@ export const pathway: PathwayStep[] = [
     videoId: "",
     minutes: 8,
     description:
-      "Hear why Oahu Theological Seminary exists: to serve the church in Hawaiʻi and the Pacific Rim by training leaders who are immersed in Scripture and rooted in their local congregation.",
+      "Hear why Oahu Theological Seminary exists: to equip faithful pastors, teachers, and leaders for the sake of Christ’s church in the islands.",
     reflect: [
       "Where do you see a need for deeper teaching in your church?",
       "Who in your life has shaped you theologically?",
@@ -36,7 +36,7 @@ export const pathway: PathwayStep[] = [
     videoId: "",
     minutes: 7,
     description:
-      "Tuesday evenings at Aiea Heights Church, projects completed in your own church, and a path that ranges from free community courses to accredited graduate degrees.",
+      "Tuesday evenings at Aiea Heights Church, with projects you complete in your own church. See how the M.A., M.Div., and Th.M. fit together, and where community courses come in.",
     reflect: [
       "What rhythm of study could you realistically sustain?",
       "Who at your church would walk through this with you?",

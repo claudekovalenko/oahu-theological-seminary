@@ -94,3 +94,15 @@ create policy "progress: own" on public.activity_progress for all
 create policy "forum: read all signed in" on public.forum_posts for select using (auth.role() = 'authenticated');
 create policy "forum: write own" on public.forum_posts for insert with check (auth.uid() = user_id);
 create policy "forum: delete own" on public.forum_posts for delete using (auth.uid() = user_id);
+
+-- Messages from the contact form (written by the server only)
+create table if not exists public.messages (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  email text not null,
+  message text not null,
+  created_at timestamptz not null default now()
+);
+alter table public.messages enable row level security;
+create policy "messages: admin read" on public.messages for select
+  using (exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin'));

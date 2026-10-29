@@ -24,6 +24,11 @@ export default function CoursesPage() {
 
       <section className="py-20">
         <Container>
+          {equip.some((c) => c.sample) && (
+            <p className="mb-8 rounded-xl border border-gold-400/60 bg-gold-400/15 px-4 py-3 text-sm text-koa-700">
+              These courses are samples that show how the course portal works. Real OTS community courses will replace them.
+            </p>
+          )}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {equip.map((c) => (
               <CourseCard key={c.slug} course={c} href={`/courses/${c.slug}`} />

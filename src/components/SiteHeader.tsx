@@ -16,20 +16,20 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Logo className="h-9 w-9" />
-          <span className="font-display text-lg leading-tight text-ocean-900">
+          <span className="font-display text-lg leading-tight text-ocean-900 sm:whitespace-nowrap">
             Oahu Theological
             <br className="sm:hidden" /> Seminary
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Main">
           {nav.map((item) => {
             const active = pathname === item.href || pathname.startsWith(item.href + "/");
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+                className={`whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium transition-colors ${
                   active ? "bg-ocean-900 text-white" : "text-ocean-900 hover:bg-sand-100"
                 }`}
               >
@@ -39,7 +39,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center gap-2 xl:flex">
           <Button href="/dashboard" variant="ghost" size="sm">
             Student portal
           </Button>
@@ -50,7 +50,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-sand-300 lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-sand-300 xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label="Toggle menu"
@@ -63,7 +63,7 @@ export function SiteHeader() {
       </Container>
 
       {open && (
-        <div id="mobile-nav" className="border-t border-sand-200 bg-sand-50 lg:hidden">
+        <div id="mobile-nav" className="border-t border-sand-200 bg-sand-50 xl:hidden">
           <Container className="flex flex-col gap-1 py-3">
             {nav.map((item) => (
               <Link
@@ -83,6 +83,13 @@ export function SiteHeader() {
                 Start here
               </Button>
             </div>
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-3 py-2 text-base font-medium text-ocean-900 hover:bg-sand-100"
+            >
+              Contact
+            </Link>
             <a
               href={site.instagram.url}
               target="_blank"

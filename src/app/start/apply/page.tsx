@@ -31,8 +31,8 @@ export default function ApplyPage(props: PageProps<"/start/apply">) {
             <Card>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lagoon-600">What happens next</p>
               <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm">
-                <li>We read your application and reply by email within a few days.</li>
-                <li>We set up a short conversation, usually including your pastor.</li>
+                <li>We read your application and reply by email.</li>
+                <li>We connect with you, and your church leadership where helpful, to give you a closer look at the programs.</li>
                 <li>You visit a Tuesday class at {site.location.venue}.</li>
                 <li>If it’s a fit, we walk you through enrollment and portal access.</li>
               </ol>

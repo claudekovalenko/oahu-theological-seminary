@@ -55,6 +55,11 @@ export function CourseViewer({ course }: { course: Course }) {
       <div className="mt-2 flex flex-wrap items-start justify-between gap-4">
         <div>
           <h1 className="text-3xl text-ocean-900">{course.title}</h1>
+          {course.sample && (
+            <p className="mt-1">
+              <Pill tone="gold">Sample course</Pill>
+            </p>
+          )}
           <p className="mt-1 text-sm text-ink-muted">
             {course.instructor} · {course.weeks} weeks
           </p>

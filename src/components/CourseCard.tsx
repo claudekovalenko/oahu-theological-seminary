@@ -15,6 +15,7 @@ export function CourseCard({ course, href }: { course: Course; href: string }) {
       <h3 className="mt-3 text-xl text-ocean-900 group-hover:underline">{course.title}</h3>
       <p className="mt-2 flex-1 text-sm text-ink-muted">{course.summary}</p>
       <div className="mt-4 flex flex-wrap gap-2">
+        {course.sample && <Pill tone="gold">Sample</Pill>}
         {course.tags.map((t) => (
           <Pill key={t}>{t}</Pill>
         ))}

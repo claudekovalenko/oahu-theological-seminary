@@ -1,14 +1,25 @@
 /**
  * Site-wide settings. Edit this file to change names, links, and the
  * featured YouTube video without touching any page code.
+ *
+ * Content in /src/content was gathered from oahuseminary.org (Oct 2026).
+ * Anything marked TODO could not be confirmed and needs a human check.
  */
 export const site = {
   name: "Oahu Theological Seminary",
   shortName: "OTS",
-  tagline: "Theological training for the church in Hawaiʻi and the Pacific Rim",
+  tagline:
+    "A center for theological and ministry training in partnership with local churches in Hawaiʻi",
   description:
-    "Oahu Theological Seminary is a center for theological and ministry training that works alongside local churches in Hawaiʻi, for the glory of God and the strengthening of the Church in the Pacific Rim.",
+    "Oahu Theological Seminary is a center for theological and ministry training in partnership with local churches in Hawaiʻi, for the glory of God and the strengthening of the Church in the Pacific Rim.",
+  purpose: "To equip faithful pastors, teachers, and leaders for the sake of Christ’s church in the islands.",
   url: "https://oahuseminary.org",
+
+  history: [
+    { year: "2011", text: "Chris Bruno begins pastoral training work on Oʻahu." },
+    { year: "2021", text: "Bethlehem College & Seminary opens an extension site on Oʻahu. Partnership with Training Leaders International begins." },
+    { year: "2023", text: "The extension site becomes its own institution: Oahu Theological Seminary." },
+  ],
 
   // Social
   instagram: {
@@ -18,12 +29,11 @@ export const site = {
   youtube: {
     channelUrl: "https://www.youtube.com/@trainingleadershawaii",
     /**
-     * The single featured video from the channel. Paste the 11-character
+     * TODO: the single featured video from the channel. Paste the 11-character
      * YouTube video ID here (the part after `v=` in the video URL).
-     * Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ  ->  "dQw4w9WgXcQ"
      */
     featuredVideoId: "",
-    featuredVideoTitle: "Why theological training in the local church?",
+    featuredVideoTitle: "Training leaders for Hawaiʻi and the Pacific",
   },
 
   // Location & contact
@@ -33,13 +43,16 @@ export const site = {
     city: "Aiea, HI 96701",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=99-400+Aiea+Heights+Dr+Aiea+HI+96701",
-    note: "All OTS classes meet at Aiea Heights Church on Tuesday evenings.",
+    note: "All OTS classes are held at Aiea Heights Church on Tuesday evenings.",
+    classTimes: ["5:00 – 6:45 pm", "7:00 – 8:45 pm"],
   },
-  contactEmail: "info@oahuseminary.org",
+  /** TODO: the seminary's public email. Hidden everywhere while blank. */
+  contactEmail: "",
 
   // Partners
   partner: {
     name: "Training Leaders International",
+    short: "TLI",
     url: "https://trainingleadersinternational.org/",
     since: 2021,
   },
@@ -50,8 +63,7 @@ export const site = {
   // External learning platform (Moodle). Leave blank to hide the embed.
   moodleUrl: process.env.NEXT_PUBLIC_MOODLE_URL ?? "",
 
-  // Academic calendar PDF (hosted on the current site)
-  academicCalendarUrl:
+  academicCalendarPdf:
     "https://img1.wsimg.com/blobby/go/46e4a438-68e8-4a7b-b9fa-326d9e0a2ed3/2025-26%20Academic%20Calendar%20OTS-3ae57c2.pdf",
 
   tuition: {
@@ -63,8 +75,9 @@ export const site = {
 export const nav = [
   { href: "/about", label: "About" },
   { href: "/degrees", label: "Degrees" },
+  { href: "/faculty", label: "Faculty" },
+  { href: "/calendar", label: "Calendar" },
   { href: "/courses", label: "Courses" },
   { href: "/community", label: "Community" },
   { href: "/admissions", label: "Admissions" },
-  { href: "/contact", label: "Contact" },
 ] as const;

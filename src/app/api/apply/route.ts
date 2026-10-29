@@ -95,6 +95,6 @@ export async function POST(request: Request) {
   return NextResponse.json({
     ok: true,
     stored: results,
-    message: "We'll be in touch by email within a few days. In the meantime, feel free to explore the community courses.",
+    message: "We’ll be in touch by email. In the meantime, you’re welcome to visit a Tuesday class at Aiea Heights Church.",
   });
 }

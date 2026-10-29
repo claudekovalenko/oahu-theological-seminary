@@ -1,52 +1,52 @@
+/**
+ * Degree programs, from oahuseminary.org program pages.
+ * TODO: total credit hours for the M.A. and M.Div. were not published
+ * in the sources available; add them when confirmed.
+ */
 export type Degree = {
   slug: string;
   short: string;
   name: string;
   summary: string;
-  audience: string;
-  format: string;
-  length: string;
-  highlights: string[];
   description: string[];
-  concentrations?: string[];
-  sampleCourses: string[];
-  outcomes: string[];
+  facts: { label: string; value: string }[];
+  concentrations?: { credits: string; areas: string[]; note: string };
+  prerequisites?: string[];
+  courses: string[];
 };
+
+const concentrationAreas = ["Counseling", "Church Planting", "Youth & Family Ministry"];
 
 export const degrees: Degree[] = [
   {
-    slug: "ma-ecclesial-theology",
+    slug: "ma-in-ecclesial-theology",
     short: "M.A.",
     name: "Master of Arts in Ecclesial Theology",
     summary:
-      "The traditional theological disciplines, studied with a meaningful emphasis on how they shape and serve the local church.",
-    audience:
-      "Lay leaders, elders, ministry staff, and anyone pursuing deep biblical and theological formation while staying rooted in their church.",
-    format: "Tuesday evenings at Aiea Heights Church, with church-based projects",
-    length: "Part-time, typically 2–3 years",
-    highlights: [
-      "Biblical languages, theology, and applied ecclesiology",
-      "Optional 9-credit concentration",
-      "Coursework designed to be completed in the context of your local church",
-    ],
+      "The traditional theological disciplines, with a meaningful emphasis on how those disciplines impact the local church.",
     description: [
-      "The M.A. in Ecclesial Theology studies the traditional theological disciplines—Old and New Testament, systematic and biblical theology, church history—but it places a meaningful emphasis on how those disciplines impact the local church.",
-      "Students take biblical language, theology, and applied ecclesiology courses. Much of the coursework is designed around projects that can only be completed in the context of the local church, so that what you learn on Tuesday night shows up in your congregation on Sunday.",
-      "Students may add an optional concentration of nine credit hours in counseling, church planting, or youth and family ministry.",
+      "The Master of Arts in Ecclesial Theology program studies traditional theological disciplines, but it places a meaningful emphasis on how those disciplines impact the local church.",
+      "Students in the program take biblical language, theology, and applied ecclesiology courses. Much of the coursework is designed to be completed in the context of the local church, so students are doing ministry while they take classes.",
     ],
-    concentrations: ["Counseling", "Church Planting", "Youth & Family Ministry"],
-    sampleCourses: [
-      "Beginning Greek I & II",
+    facts: [
+      { label: "Classes", value: "Tuesday evenings at Aiea Heights Church" },
+      { label: "Coursework", value: "Biblical languages, theology, applied ecclesiology" },
+      { label: "Tuition", value: "$300 per credit hour (2025–2026)" },
+    ],
+    concentrations: {
+      credits: "9 credit hours",
+      areas: concentrationAreas,
+      note: "For the M.A., the concentration takes the place of the Applied Ministry courses, free electives, and the applied theology capstone.",
+    },
+    courses: [
+      "Old Testament Theology",
       "New Testament Theology",
       "Biblical Theology",
+      "Beginning Greek 1 & 2",
+      "Theology 1 & 2",
+      "Historical Theology",
       "Ecclesial Theology",
-      "Counseling I & II",
-      "Greek Exegesis of Matthew",
-    ],
-    outcomes: [
-      "Read and interpret Scripture faithfully in its original languages",
-      "Articulate historic, confessional Christian doctrine",
-      "Apply theology to the real life of a local congregation",
+      "Applied Theology",
     ],
   },
   {
@@ -54,33 +54,30 @@ export const degrees: Degree[] = [
     short: "M.Div.",
     name: "Master of Divinity",
     summary:
-      "The standard preparation for pastoral ministry: Scripture, languages, theology, preaching, and pastoral care, all practiced in your church.",
-    audience:
-      "Those preparing for pastoral ministry, church planting, or vocational leadership in Hawaiʻi and the Pacific Islands.",
-    format: "Tuesday evenings at Aiea Heights Church, with church-based projects",
-    length: "Part-time, typically 4–5 years",
-    highlights: [
-      "Full biblical language sequence (Greek and Hebrew)",
-      "Preaching, counseling, and pastoral ministry courses",
-      "Built for people already serving in a congregation",
-    ],
+      "Preparation for pastoral ministry: Scripture in the original languages, theology, preaching, and counseling, practiced in the local church.",
     description: [
-      "The Master of Divinity is the seminary's most comprehensive program, designed for men and women preparing for pastoral and vocational ministry.",
-      "Students complete the full range of biblical, theological, historical, and practical courses, including preaching and counseling, with a strong emphasis on applied theology in the local church.",
-      "Because every student is embedded in a local church, the M.Div. functions as an apprenticeship as much as a degree: your pastor and elders walk with you through the program.",
+      "The Master of Divinity prepares students for pastoral and vocational ministry. Like every OTS program, it is built in partnership with local churches, and its courses include projects that are completed in the life of a congregation.",
+      "M.Div. students may add a concentration in counseling, church planting, or youth and family ministry.",
     ],
-    sampleCourses: [
-      "Beginning Greek & Hebrew",
-      "Old and New Testament Theology",
-      "Preaching",
-      "Counseling I & II (with CCEF supervision)",
-      "Ecclesial Theology",
-      "Applied Theology",
+    facts: [
+      { label: "Classes", value: "Tuesday evenings at Aiea Heights Church" },
+      { label: "Coursework", value: "Greek and Hebrew, theology, preaching, counseling" },
+      { label: "Tuition", value: "$300 per credit hour (2025–2026)" },
     ],
-    outcomes: [
-      "Preach and teach the whole counsel of God",
-      "Shepherd people with biblical wisdom and care",
-      "Lead a church with theological clarity and humility",
+    concentrations: {
+      credits: "Optional",
+      areas: concentrationAreas,
+      note: "Ask the academic dean how a concentration fits your M.Div. plan.",
+    },
+    courses: [
+      "Beginning & Intermediate Greek",
+      "Intermediate Hebrew",
+      "Hebrew Exegesis",
+      "Greek Exegesis of Matthew",
+      "Preaching 2",
+      "Counseling 2 (with CCEF)",
+      "Advanced Biblical Studies",
+      "Advanced Theological Studies",
     ],
   },
   {
@@ -88,31 +85,22 @@ export const degrees: Degree[] = [
     short: "Th.M.",
     name: "Master of Theology",
     summary:
-      "A 20-credit, thesis-based research degree for those who already hold an M.Div. or equivalent and want to go deeper.",
-    audience:
-      "Pastors and teachers with a prior theological master's degree who want advanced study and a supervised thesis.",
-    format: "Seminars plus independent, supervised research",
-    length: "20 credits including a thesis",
-    highlights: [
-      "20 credits, thesis required",
-      "Supervised research with OTS faculty",
-      "Ideal preparation for doctoral study or advanced teaching ministry",
-    ],
+      "A 20-credit research degree for sharpening your understanding of a specific topic within a theological discipline.",
     description: [
-      "The Master of Theology (Th.M.) is a post-M.Div. academic degree for pastors and teachers who want to pursue focused research in a theological discipline.",
-      "The program is 20 credits and requires a thesis, written under the supervision of OTS faculty, that makes a contribution to the life and teaching of the church in the Pacific Rim.",
+      "The Master of Theology is for students who want to sharpen their understanding of a specific topic through graduate-level research within a given theological discipline.",
+      "After the research and coursework, the student writes a thesis of approximately 40,000 words and defends it.",
     ],
-    sampleCourses: [
-      "Advanced Exegesis Seminar",
-      "Theological Research Methods",
-      "Directed Reading",
-      "Thesis",
+    facts: [
+      { label: "Credits", value: "20" },
+      { label: "Thesis", value: "About 40,000 words, with an oral defense" },
+      { label: "Tuition", value: "$300 per credit hour (2025–2026)" },
     ],
-    outcomes: [
-      "Conduct original theological research",
-      "Write at a level suitable for publication or doctoral admission",
-      "Teach others with depth and precision",
+    prerequisites: [
+      "You have already completed an M.Div. degree.",
+      "You have secured a faculty member, or another qualified individual, as a supervisor.",
+      "You have a general thesis topic in mind.",
     ],
+    courses: ["Supervised research", "Directed coursework", "Thesis and defense"],
   },
 ];
 
