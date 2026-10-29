@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/*
+  Design tokens — a Pacific palette.
+  ocean: deep navy for headers/footers and primary text on light
+  lagoon: teal accent for links and highlights
+  sand: warm off-white backgrounds
+  koa: warm brown accent (koa wood)
+  gold: highlight for calls to action
+*/
+@theme {
+  --color-ocean-950: #061627;
+  --color-ocean-900: #0b2340;
+  --color-ocean-800: #113156;
+  --color-ocean-700: #1a416f;
+  --color-lagoon-700: #15607a;
+  --color-lagoon-600: #1b7a97;
+  --color-lagoon-500: #2a94b3;
+  --color-lagoon-100: #dff0f5;
+  --color-sand-50: #fbf8f1;
+  --color-sand-100: #f5efe2;
+  --color-sand-200: #ebe1cb;
+  --color-sand-300: #d9c9a6;
+  --color-koa-700: #6e3a1f;
+  --color-koa-600: #8a4b2a;
+  --color-gold-500: #c9a24a;
+  --color-gold-400: #dcb964;
+  --color-ink: #16202b;
+  --color-ink-muted: #4b5a68;
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgb(6 22 39 / 0.05), 0 8px 24px -12px rgb(6 22 39 / 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-sand-50);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.prose-ots p + p {
+  margin-top: 1rem;
+}
+
+/* Subtle wave divider used on the home page */
+.wave-top {
+  position: relative;
+}
+.wave-top::before {
+  content: "";
+  position: absolute;
+  inset: -1px 0 auto 0;
+  height: 48px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath d='M0 24C240 0 480 48 720 24S1200 0 1440 24V0H0z' fill='%23fbf8f1'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  pointer-events: none;
+}
+
+/* Focus ring */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-lagoon-500);
+  outline-offset: 2px;
+}
