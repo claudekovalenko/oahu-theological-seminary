@@ -25,14 +25,24 @@ export default function FacultyPage() {
             <article
               key={p.slug}
               id={p.slug}
-              className="grid scroll-mt-24 gap-6 rounded-3xl border border-sand-200 bg-white p-6 shadow-soft sm:grid-cols-[96px_1fr] sm:p-8"
+              className="grid scroll-mt-24 gap-6 rounded-3xl border border-sand-200 bg-white p-6 shadow-soft sm:grid-cols-[160px_1fr] sm:p-8"
             >
-              <div
-                className="flex h-24 w-24 items-center justify-center rounded-full bg-ocean-900 font-display text-3xl text-gold-400"
-                aria-hidden="true"
-              >
-                {initials(p.name)}
-              </div>
+              {p.image ? (
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  width={160}
+                  height={160}
+                  className="h-24 w-24 rounded-full object-cover sm:h-40 sm:w-40"
+                />
+              ) : (
+                <div
+                  className="flex h-24 w-24 items-center justify-center rounded-full bg-ocean-900 font-display text-3xl text-gold-400 sm:h-40 sm:w-40"
+                  aria-hidden="true"
+                >
+                  {initials(p.name)}
+                </div>
+              )}
               <div className="min-w-0">
                 <h2 className="text-2xl text-ocean-900">{p.name}</h2>
                 <p className="mt-1 font-medium text-lagoon-700">{p.title}</p>
