@@ -92,8 +92,9 @@ export function Pill({ children, tone = "sand" }: { children: ReactNode; tone?: 
 
 export function PageHero({ eyebrow, title, text, children }: { eyebrow?: string; title: string; text?: string; children?: ReactNode }) {
   return (
-    <section className="bg-ocean-900 text-white">
-      <Container className="py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-ocean-900 text-white">
+      <div className="pointer-events-none absolute inset-0 hero-tropical" />
+      <Container className="relative py-16 sm:py-20">
         <div className="max-w-3xl">
           {eyebrow && <Eyebrow className="text-gold-400">{eyebrow}</Eyebrow>}
           <h1 className="mt-3 text-4xl sm:text-5xl">{title}</h1>
@@ -101,6 +102,7 @@ export function PageHero({ eyebrow, title, text, children }: { eyebrow?: string;
           {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
         </div>
       </Container>
+      <div className="kapa-border" />
     </section>
   );
 }

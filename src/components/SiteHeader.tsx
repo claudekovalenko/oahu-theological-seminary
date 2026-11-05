@@ -14,12 +14,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-sand-200 bg-sand-50/90 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <Logo className="h-9 w-9" />
-          <span className="font-display text-lg leading-tight text-ocean-900 sm:whitespace-nowrap">
-            Oahu Theological
-            <br className="sm:hidden" /> Seminary
-          </span>
+        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+          <Logo className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Main">

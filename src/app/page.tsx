@@ -19,13 +19,7 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-ocean-900 text-white">
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(70% 90% at 85% 10%, rgba(42,148,179,.45) 0%, transparent 60%), radial-gradient(50% 70% at 10% 90%, rgba(201,162,74,.25) 0%, transparent 60%)",
-          }}
-        />
+        <div className="pointer-events-none absolute inset-0 hero-tropical" />
         <Container className="relative grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-[1.1fr_.9fr]">
           <div>
             <Eyebrow className="text-gold-400">Aiea, Oʻahu · Hawaiʻi</Eyebrow>
@@ -63,6 +57,8 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <div className="kapa-border" />
 
       {/* Two doors */}
       <section className="py-20">

@@ -10,8 +10,7 @@ export function SiteFooter() {
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
           <div className="flex items-center gap-3">
-            <Logo className="h-10 w-10" />
-            <p className="font-display text-lg text-white">{site.name}</p>
+            <Logo className="h-12 w-auto brightness-0 invert" />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-sand-300">{site.tagline}</p>
           <div className="mt-5 flex gap-3">
