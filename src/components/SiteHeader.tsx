@@ -12,7 +12,7 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-sand-200 bg-sand-50/90 backdrop-blur">
+    <header className="sticky top-0 z-40 bg-sand-50/90 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <Logo className="h-10 w-auto" />
@@ -58,8 +58,10 @@ export function SiteHeader() {
         </button>
       </Container>
 
+      <div className="kapa-border" />
+
       {open && (
-        <div id="mobile-nav" className="border-t border-sand-200 bg-sand-50 xl:hidden">
+        <div id="mobile-nav" className="bg-sand-50 xl:hidden">
           <Container className="flex flex-col gap-1 py-3">
             {nav.map((item) => (
               <Link

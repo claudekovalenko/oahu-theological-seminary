@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container, PageHero, Pill } from "@/components/ui";
 import { faculty } from "@/content/faculty";
+import { asset } from "@/lib/basePath";
 
 export const metadata: Metadata = { title: "Faculty" };
 
@@ -29,7 +30,7 @@ export default function FacultyPage() {
             >
               {p.image ? (
                 <img
-                  src={p.image}
+                  src={asset(p.image)}
                   alt={p.name}
                   width={160}
                   height={160}

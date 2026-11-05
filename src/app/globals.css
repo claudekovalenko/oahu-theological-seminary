@@ -59,7 +59,7 @@ h1, h2, h3, .font-display {
   margin-top: 1rem;
 }
 
-/* Subtle wave divider used between sections */
+/* Ocean wave divider — sand over dark */
 .wave-top {
   position: relative;
 }
@@ -69,6 +69,19 @@ h1, h2, h3, .font-display {
   inset: -1px 0 auto 0;
   height: 48px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath d='M0 24C240 0 480 48 720 24S1200 0 1440 24V0H0z' fill='%23fbf8f1'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  pointer-events: none;
+}
+
+/* Ocean wave divider — dark over sand */
+.wave-bottom {
+  position: relative;
+}
+.wave-bottom::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px 0;
+  height: 48px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath d='M0 24C240 48 480 0 720 24S1200 48 1440 24V48H0z' fill='%230b2340'/%3E%3C/svg%3E") no-repeat center/100% 100%;
   pointer-events: none;
 }
 
@@ -88,12 +101,54 @@ h1, h2, h3, .font-display {
   height: 4px;
 }
 
+/* Kapa border variant for wider triangles — used for emphasis */
+.kapa-border-thick {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-gold-500) 0px,
+    var(--color-gold-500) 16px,
+    transparent 16px,
+    transparent 22px,
+    var(--color-koa-600) 22px,
+    var(--color-koa-600) 28px,
+    transparent 28px,
+    transparent 34px,
+    var(--color-lagoon-500) 34px,
+    var(--color-lagoon-500) 44px,
+    transparent 44px,
+    transparent 50px
+  );
+  height: 6px;
+}
+
 /* Subtle tropical leaf watermark for hero sections */
 .hero-tropical {
   background-image:
     radial-gradient(70% 90% at 85% 10%, rgba(42,148,179,.35) 0%, transparent 60%),
     radial-gradient(50% 70% at 10% 90%, rgba(201,162,74,.2) 0%, transparent 60%),
     radial-gradient(40% 50% at 95% 85%, rgba(45,90,61,.15) 0%, transparent 50%);
+}
+
+/* Warm tropical glow for sand-colored sections */
+.tropical-glow {
+  background-image:
+    radial-gradient(60% 80% at 90% 20%, rgba(201,162,74,.08) 0%, transparent 60%),
+    radial-gradient(50% 60% at 5% 80%, rgba(42,148,179,.06) 0%, transparent 50%);
+}
+
+/* Footer ocean gradient — deep Pacific depth */
+.footer-ocean {
+  background: linear-gradient(
+    180deg,
+    var(--color-ocean-950) 0%,
+    #040f1e 100%
+  );
+}
+
+/* Decorative inline wave SVG for use in text sections */
+.wave-accent {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4C20 0 40 8 60 4S100 0 120 4' fill='none' stroke='%23dcb964' stroke-width='1.5'/%3E%3C/svg%3E") repeat-x center/120px 8px;
+  height: 8px;
 }
 
 /* Focus ring */

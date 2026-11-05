@@ -60,6 +60,17 @@ export default function HomePage() {
 
       <div className="kapa-border" />
 
+      {/* ʻŌlelo — Hawaiian proverb */}
+      <section className="bg-sand-100 tropical-glow py-10">
+        <Container className="text-center">
+          <p className="font-display text-2xl italic text-ocean-900 sm:text-3xl">
+            &ldquo;Ma ka hana ka ʻike.&rdquo;
+          </p>
+          <p className="mt-2 text-sm text-ink-muted">In working, one learns. — Hawaiian proverb</p>
+          <div className="wave-accent mx-auto mt-4 w-32" />
+        </Container>
+      </section>
+
       {/* Two doors */}
       <section className="py-20">
         <Container>
@@ -117,7 +128,7 @@ export default function HomePage() {
       </section>
 
       {/* Pathway */}
-      <section className="bg-sand-100 py-20">
+      <section className="bg-sand-100 tropical-glow py-20">
         <Container className="grid items-start gap-12 lg:grid-cols-[.8fr_1.2fr]">
           <SectionHeading
             eyebrow="Start here"
@@ -173,10 +184,10 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <ol className="relative space-y-6 border-l-2 border-sand-200 pl-6">
+          <ol className="relative space-y-6 border-l-2 border-gold-500/40 pl-6">
             {site.history.map((h) => (
               <li key={h.year}>
-                <span className="absolute -left-[9px] mt-1.5 h-4 w-4 rounded-full border-2 border-sand-50 bg-lagoon-600" />
+                <span className="absolute -left-[9px] mt-1.5 h-4 w-4 rounded-full border-2 border-sand-50 bg-gold-500" />
                 <p className="font-display text-2xl text-ocean-900">{h.year}</p>
                 <p className="mt-1 text-ink-muted">{h.text}</p>
               </li>
@@ -184,6 +195,8 @@ export default function HomePage() {
           </ol>
         </Container>
       </section>
+
+      <div className="kapa-border" />
 
       {/* Faculty + this term */}
       <section className="bg-ocean-900 py-20 text-white">
@@ -225,10 +238,12 @@ export default function HomePage() {
         </Container>
       </section>
 
+      <div className="kapa-border" />
+
       <InstagramSection />
 
       {/* Events */}
-      <section className="bg-sand-100 py-20">
+      <section className="bg-sand-100 tropical-glow py-20">
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading

@@ -6,7 +6,9 @@ import { Year } from "./Year";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 bg-ocean-950 text-sand-200">
+    <footer className="mt-24 text-sand-200">
+      <div className="kapa-border-thick" />
+      <div className="footer-ocean">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
           <div className="flex items-center gap-3">
@@ -115,6 +117,7 @@ export function SiteFooter() {
           <p>© <Year /> {site.name}. A Hawaiʻi nonprofit corporation.</p>
           <Link href="/about#beliefs" className="hover:text-white">Creeds and confessions</Link>
         </Container>
+      </div>
       </div>
     </footer>
   );
