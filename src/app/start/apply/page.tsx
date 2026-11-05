@@ -2,17 +2,12 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Card, Container, PageHero } from "@/components/ui";
 import { ApplicationForm } from "@/components/ApplicationForm";
+import { ApplicationFormWithParams } from "./ApplicationFormWithParams";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = { title: "Apply" };
 
-async function Form({ searchParams }: Pick<PageProps<"/start/apply">, "searchParams">) {
-  const sp = await searchParams;
-  const program = typeof sp.program === "string" ? sp.program : undefined;
-  return <ApplicationForm defaultInterest={program} />;
-}
-
-export default function ApplyPage(props: PageProps<"/start/apply">) {
+export default function ApplyPage() {
   return (
     <>
       <PageHero
@@ -24,7 +19,7 @@ export default function ApplyPage(props: PageProps<"/start/apply">) {
         <Container className="grid gap-10 lg:grid-cols-[1.2fr_.8fr]">
           <div className="rounded-3xl border border-sand-200 bg-white p-6 shadow-soft sm:p-8">
             <Suspense fallback={<ApplicationForm />}>
-              <Form searchParams={props.searchParams} />
+              <ApplicationFormWithParams />
             </Suspense>
           </div>
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
@@ -34,14 +29,14 @@ export default function ApplyPage(props: PageProps<"/start/apply">) {
                 <li>We read your application and reply by email.</li>
                 <li>We connect with you, and your church leadership where helpful, to give you a closer look at the programs.</li>
                 <li>You visit a Tuesday class at {site.location.venue}.</li>
-                <li>If it’s a fit, we walk you through enrollment and portal access.</li>
+                <li>If it's a fit, we walk you through enrollment and portal access.</li>
               </ol>
             </Card>
             <Card className="bg-sand-50">
               <p className="font-display text-lg text-ocean-900">No pressure</p>
               <p className="mt-2 text-sm text-ink-muted">
                 Applying starts a conversation. Plenty of people begin with a community course and move into a degree
-                later, and that’s exactly how we hope it works.
+                later, and that's exactly how we hope it works.
               </p>
             </Card>
           </aside>

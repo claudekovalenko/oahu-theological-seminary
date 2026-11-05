@@ -15,9 +15,14 @@ const legacyRedirects: [string, string][] = [
   ["/learn-biblical-greek", "/community"],
 ];
 
+const isGitHubPages = !!process.env.NEXT_PUBLIC_BASE_PATH;
+const basePath = isGitHubPages ? "/oahu-theological-seminary" : "";
+
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: isGitHubPages ? "export" : undefined,
+  basePath: basePath || undefined,
+  images: isGitHubPages ? { unoptimized: true } : undefined,
+  ...(!isGitHubPages && { cacheComponents: true, partialPrefetching: true }),
   turbopack: {
     rules: {
       "*.css": {
@@ -26,9 +31,11 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  async redirects() {
-    return legacyRedirects.map(([source, destination]) => ({ source, destination, permanent: true }));
-  },
+  ...(!isGitHubPages && {
+    async redirects() {
+      return legacyRedirects.map(([source, destination]) => ({ source, destination, permanent: true }));
+    },
+  }),
 };
 
 export default nextConfig;
