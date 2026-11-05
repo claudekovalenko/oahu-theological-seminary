@@ -53,6 +53,7 @@ export const faculty: Person[] = [
     name: "Taylor Brazil",
     title: "Instructor of Biblical Languages",
     degrees: "MDiv, Beeson Divinity School · PhD candidate, Beeson Divinity School",
+    image: "/images/faculty/taylor-brazil.webp",
     bio: [],
     teaches: ["Beginning Greek 2", "Hebrew Exegesis", "Advanced Biblical Studies"],
   },
