@@ -1,8 +1,8 @@
 /**
- * Faculty, from oahuseminary.org/meet-our-team and individual bio pages.
- * TODO: the source page's layout made two titles ambiguous (Taylor Brazil,
- * Mark Brians). Confirm before launch. A bio page for Cody Irwin exists on the
- * current site but its content could not be read; add him when confirmed.
+ * Faculty, from oahuseminary.org/faculty (confirmed Nov 2026).
+ * Taylor Brazil: "Instructor of Biblical Languages" (confirmed).
+ * Mark Brians: "Instructor in Pastoral Theology" (confirmed).
+ * Degrees updated from live site. Cody Irwin no longer appears on the live faculty page.
  */
 export type Person = {
   slug: string;
@@ -19,7 +19,7 @@ export const faculty: Person[] = [
     slug: "chris-bruno",
     name: "Chris Bruno",
     title: "President · Professor of New Testament and Biblical Theology",
-    degrees: "PhD, Wheaton College",
+    degrees: "PhD, Wheaton College · MDiv, SBTS · BA, Northland International University",
     image: "/images/faculty/chris-bruno.webp",
     bio: [
       "Chris has been involved in pastoral training on Oʻahu since 2011. In 2017 he moved to Minneapolis to teach at Bethlehem College & Seminary, and in 2021 he helped launch and facilitate a BCS extension site on Oʻahu.",
@@ -32,6 +32,7 @@ export const faculty: Person[] = [
     slug: "david-larson",
     name: "David Larson",
     title: "Academic Dean · Assistant Professor of Systematic Theology & Biblical Languages",
+    degrees: "ThM, Bethlehem Seminary · MDiv, Bethlehem Seminary · BA, Bethlehem College",
     image: "/images/faculty/david-larson.webp",
     bio: [
       "David first visited Oʻahu in 2019 on a ministry trip during his M.Div. studies. He and his family moved to Hawaiʻi in 2022 to equip and raise up leaders in the Pacific Islands.",
@@ -52,7 +53,7 @@ export const faculty: Person[] = [
     slug: "taylor-brazil",
     name: "Taylor Brazil",
     title: "Instructor of Biblical Languages",
-    degrees: "MDiv, Beeson Divinity School · PhD candidate, Beeson Divinity School",
+    degrees: "PhD (cand.), Beeson Divinity School · MDiv, Beeson Divinity School · BA, Union University",
     image: "/images/faculty/taylor-brazil.webp",
     bio: [],
     teaches: ["Beginning Greek 2", "Hebrew Exegesis", "Advanced Biblical Studies"],
@@ -61,6 +62,7 @@ export const faculty: Person[] = [
     slug: "mark-brians",
     name: "Mark Brians",
     title: "Instructor in Pastoral Theology",
+    degrees: "MA, Hawaii Pacific University · BA, Hawaii Pacific University",
     image: "/images/faculty/mark-brians.webp",
     bio: [
       "Mark is rector of All Saints Anglican Church in Honolulu and director of the Theopolis Fellows Program. He also serves as a trustee of the seminary.",

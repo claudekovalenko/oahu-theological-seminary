@@ -32,7 +32,7 @@ export const site = {
      * TODO: the single featured video from the channel. Paste the 11-character
      * YouTube video ID here (the part after `v=` in the video URL).
      */
-    featuredVideoId: "",
+    featuredVideoId: "BjjIU_vSMOs",
     featuredVideoTitle: "Training leaders for Hawaiʻi and the Pacific",
   },
 
@@ -46,8 +46,7 @@ export const site = {
     note: "All OTS classes are held at Aiea Heights Church on Tuesday evenings.",
     classTimes: ["5:00 – 6:45 pm", "7:00 – 8:45 pm"],
   },
-  /** TODO: the seminary's public email. Hidden everywhere while blank. */
-  contactEmail: "",
+  contactEmail: "info@oahuseminary.org",
 
   // Partners
   partner: {
