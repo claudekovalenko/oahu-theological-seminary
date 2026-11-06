@@ -57,6 +57,20 @@ export const boardMembers: BoardMember[] = [
 ];
 
 /**
+ * Partner churches, from the OTS Course Catalogue 2024–25 §12.
+ * Through its board members, OTS is in cooperation with these churches.
+ */
+export const partnerChurches: string[] = [
+  "Aiea Heights Church",
+  "All Saints Anglican Church",
+  "Christ the Foundation Anglican Church",
+  "City Church Honolulu",
+  "Kailua Baptist Church",
+  "The Refuge Church Ko'olauloa",
+  "The Gospel Coalition Hawaiʻi chapter and its affiliated churches",
+];
+
+/**
  * Certificate program from oahuseminary.org/certificate-in-theology (retrieved Nov 2026).
  */
 export const certificate = {

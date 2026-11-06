@@ -47,6 +47,11 @@ export const site = {
     classTimes: ["5:00 – 6:45 pm", "7:00 – 8:45 pm"],
   },
   contactEmail: "info@oahuseminary.org",
+  mailingAddress: {
+    street: "404 Kalama St.",
+    city: "Kailua, HI 96734",
+  },
+  phone: "(808) 421-9986",
 
   // Partners
   partner: {
